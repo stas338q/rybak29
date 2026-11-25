@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07131f">
 <title>Рыбалка в Архангельской области — помощник рыбака</title>
 <meta name="description" content="Помощник рыбака по Архангельской области: где ловить на Двине, озёрах и Белом море, мормышки и снасти, навага и корюшка, нерестовый запрет и нормы вылова, безопасность на льду.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <style>
-:root{--bg:#07131f;--bg2:#0c1d2e;--card:#10263b;--card2:#163352;--line:#ffffff14;--ice:#d6ecff;--acc:#5cc8ff;--aur:#5ef2b5;--warm:#ffb454;--red:#ff6b6b;--txt:#e9f2fb;--mut:#8ea8c0}
+:root{--bg:#07131f;--bg2:#0c1d2e;--card:#10263b;--card2:#163352;--line:#ffffff14;--ice:#d6ecff;--acc:#5cc8ff;--aur:#5ef2b5;--warm:#ffb454;--red:#ff6b6b;--txt:#e9f2fb;--mut:#9db6cc;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
 a{color:var(--acc)}
@@ -39,13 +41,13 @@ section h2{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
 section .sub{color:var(--mut);margin:0 0 26px}
 /* chat */
 #bot{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.chatbox{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:640px;max-height:80vh;min-height:0;box-shadow:0 30px 60px #0006}
-.chathead{display:flex;flex:0 0 auto;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:#0e2236}
+.chatbox{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:640px;max-height:80vh;box-shadow:0 30px 60px #0006}
+.chathead{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:#0e2236}
 .ava{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--aur),var(--acc));display:grid;place-items:center;font-size:20px}
-.chathead b{display:block}.chathead small{display:block;color:var(--mut)}
+.chathead b{display:block}.chathead small{color:var(--mut)}
 .chathead .tb{margin-left:auto;background:#ffffff10;border:1px solid #ffffff22;color:var(--txt);border-radius:10px;padding:7px 12px;cursor:pointer;font-size:13px}
-#log{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:18px;display:flex;flex-direction:column;gap:12px;scrollbar-gutter:stable}
-.msg{max-width:780px;padding:12px 16px;border-radius:14px;font-size:14.5px;line-height:1.48;animation:in .25s ease}
+#log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:780px;padding:12px 16px;border-radius:14px;font-size:14.5px;animation:in .25s ease}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
 .user{align-self:flex-end;background:var(--acc);color:#03263b;border-bottom-right-radius:4px;font-weight:500}
 .bot{align-self:flex-start;background:var(--card2);border:1px solid var(--line);border-bottom-left-radius:4px}
@@ -59,12 +61,15 @@ section .sub{color:var(--mut);margin:0 0 26px}
 .typing{display:inline-flex;gap:4px}.typing i{width:6px;height:6px;border-radius:50%;background:var(--mut);animation:b 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
 @keyframes b{0%,60%,100%{opacity:.3}30%{opacity:1}}
-.quick{flex:0 0 auto;padding:0 18px 8px;display:flex;gap:6px;flex-wrap:wrap}
-#f{display:flex;flex:0 0 auto;gap:8px;padding:10px 18px 16px}
-#q{flex:1;min-width:0;background:#0b1c2c;border:1px solid #ffffff26;color:var(--txt);padding:13px 16px;border-radius:12px;font-size:15px;outline:none;font-family:inherit}
+.quick{padding:0 18px 8px;display:flex;gap:6px;flex-wrap:wrap}
+#f{display:flex;gap:8px;padding:10px 18px 16px}
+#q{flex:1;min-width:0;background:#0b1c2c;border:1px solid #ffffff3a;color:#f4f9ff;-webkit-text-fill-color:#f4f9ff;padding:13px 16px;border-radius:12px;font-size:16px;outline:none;font-family:inherit;-webkit-appearance:none;appearance:none;caret-color:var(--acc);font-weight:500}
+#q::placeholder{color:#8aa3bc;-webkit-text-fill-color:#8aa3bc;opacity:1}
+#q:focus{border-color:var(--acc);box-shadow:0 0 0 3px #5cc8ff2e}
+#q:-webkit-autofill{-webkit-box-shadow:0 0 0 60px #0b1c2c inset}
 #q:focus{border-color:var(--acc)}
-#f button{background:var(--warm);border:0;color:#3a2100;font-weight:800;padding:0 20px;border-radius:12px;cursor:pointer;font-size:16px}
-#topics{display:none;flex:0 1 auto;max-height:240px;overflow-y:auto;overscroll-behavior:contain;padding:4px 18px 10px;border-top:1px solid var(--line);background:#102940}
+#f button{background:var(--warm);border:0;-webkit-appearance:none;appearance:none;color:#3a2100;font-weight:800;padding:0 20px;min-height:48px;border-radius:12px;cursor:pointer;font-size:16px}
+#topics{display:none;max-height:240px;overflow-y:auto;padding:4px 18px 10px;border-top:1px solid var(--line)}
 #topics.open{display:block}
 #topics h4{margin:10px 0 4px;font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
 /* calendar */
@@ -100,18 +105,7 @@ th{background:#0e2236;color:var(--mut);font-weight:600;font-size:12.5px;text-tra
 .sos .n{font-size:38px;font-weight:900;color:var(--red)}
 footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--mut);font-size:13px}
 @media(max-width:900px){.hero .wrap,.rules{grid-template-columns:1fr}.cal{grid-template-columns:repeat(2,1fr)}.grid3,.safety{grid-template-columns:1fr 1fr}h1{font-size:34px}nav .links{display:none}}
-@media(max-width:560px){
- .grid3,.safety,.cal{grid-template-columns:1fr}.btn.ghost{margin:10px 0 0}
- #bot{padding:38px 0}.chatbox{height:78svh;max-height:720px;min-height:540px;border-radius:16px}
- .chathead{gap:9px;padding:11px 12px}.ava{width:36px;height:36px;font-size:18px;flex:0 0 auto}
- .chathead>div:nth-child(2){min-width:0}.chathead b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chathead small{font-size:11.5px}
- .chathead .tb{padding:7px 9px;font-size:12px;white-space:nowrap}
- #topics{max-height:42%;padding:3px 12px 9px}
- #log{min-height:180px;padding:12px;gap:9px}.msg{max-width:94%;padding:11px 13px;font-size:15px;line-height:1.52}
- .quick{padding:0 12px 7px;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
- .quick::-webkit-scrollbar{display:none}.quick .chip{flex:0 0 auto;white-space:nowrap}
- #f{padding:8px 12px 12px}.chip{font-size:12.5px}#q{padding:12px 13px;font-size:16px}#f button{min-width:52px;padding:0 16px}
-}
+@media(max-width:560px){.grid3,.safety,.cal{grid-template-columns:1fr}.btn.ghost{margin:10px 0 0}.chatbox{height:75vh}}
 </style>
 </head>
 <body>
@@ -233,11 +227,8 @@ function predict(text){
 const ix=id=>M.topics.findIndex(t=>t.id===id);
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
-const log=document.getElementById('log'),topicsEl=document.getElementById('topics'),topicsBtn=document.getElementById('tbtn');
-log.setAttribute('aria-live','polite');
-function setTopics(open){topicsEl.classList.toggle('open',open);topicsBtn.setAttribute('aria-expanded',String(open));topicsBtn.textContent=open?'✕ Закрыть':'📚 Все темы'}
-function closeTopics(){setTopics(false)}
-function add(html,cls){const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;log.appendChild(d);requestAnimationFrame(()=>{log.scrollTop=log.scrollHeight});return d}
+const log=document.getElementById('log');
+function add(html,cls){const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
 const chips=list=>'<div class="chips">'+list.map(c=>`<button class="chip" data-t="${M.topics[c].id}">${esc(M.topics[c].title)}</button>`).join('')+'</div>';
 const SERVICE=['greet','thanks','bye','about'];
 function reply(fn){const t=add('<span class="typing"><i></i><i></i><i></i></span>','bot');setTimeout(()=>{t.remove();fn()},380)}
@@ -245,19 +236,18 @@ function showTopic(c,conf,others){let h=fmt(M.topics[c].answer);
  if(conf!==undefined&&!SERVICE.includes(M.topics[c].id)){h+=`<div class="meta">🧠 Тема: <b>${esc(M.topics[c].title)}</b> · уверенность<span class="bar"><i style="width:${Math.round(conf*100)}%"></i></span>${Math.round(conf*100)}%`;
   if(others&&others.length)h+='<br>Возможно, вам также интересно:'+chips(others);h+='</div>'}
  add(h,'bot')}
-function ask(text){text=text.trim();if(!text)return;closeTopics();add(esc(text),'user');const p=predict(text);
+function ask(text){text=text.trim();if(!text)return;add(esc(text),'user');const p=predict(text);
  reply(()=>{
   if(!p){add('Хм, я не узнал ни одного слова 🤔 Попробуйте спросить иначе или выберите тему:'+chips(['navaga','places_dvina','mormyshka_types','ice_safety','rules'].map(ix)),'bot');return}
   const order=[...p.keys()].sort((a,b)=>p[b]-p[a]),best=order[0],conf=p[best];
   if(conf<0.35){add('Я не совсем уверен, что понял вопрос 🤔 Может быть, вы имели в виду одну из этих тем?'+chips(order.slice(0,4)),'bot');return}
   showTopic(best,conf,order.slice(1,4).filter(c=>p[c]>0.04&&!SERVICE.includes(M.topics[c].id)))})}
-function openTopic(id){const c=ix(id);if(c<0)return;closeTopics();add(esc(M.topics[c].title),'user');reply(()=>showTopic(c))}
+function openTopic(id){const c=ix(id);if(c<0)return;add(esc(M.topics[c].title),'user');reply(()=>showTopic(c))}
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const q=document.getElementById('q');ask(q.value);q.value=''};
 document.addEventListener('click',e=>{
  const t=e.target.closest('[data-t]');if(t){if(!t.closest('#bot'))document.getElementById('bot').scrollIntoView();openTopic(t.dataset.t);return}
  const a=e.target.closest('[data-ask]');if(a){if(!a.closest('#bot'))document.getElementById('bot').scrollIntoView();ask(a.dataset.ask)}});
-topicsBtn.onclick=()=>setTopics(!topicsEl.classList.contains('open'));
-setTopics(false);
+document.getElementById('tbtn').onclick=()=>document.getElementById('topics').classList.toggle('open');
 const groups=[['📍 Места',['places_arkhangelsk','places_dvina','places_lakes','places_sea','places_rivers']],
  ['📜 Правила',['rules','catch_limits','banned_species']],
  ['🐟 Рыба',['navaga','smelt','perch_winter','perch_summer','pike_winter','pike_summer','burbot','roach','ide','bream','ruff','grayling','whitefish','salmon','crucian','zander']],
